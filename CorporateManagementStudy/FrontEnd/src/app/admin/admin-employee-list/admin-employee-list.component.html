@@ -1,0 +1,31 @@
+<div class="vendors view indent">
+    <div class="container">
+        <header>
+            <h3>
+                <span class="glyphicon glyphicon-user"></span>
+                {{ title }}
+            </h3>
+        </header>
+        <br />
+        <div class="row">
+            <div class="col-md-10">
+                <div class="navbar">
+                    <!-- <ul class="nav navbar-nav">                        
+                        <li class="toolbar-item">
+                            <a routerLink="/vendor/newvendoremployee">
+                                <span class="glyphicon glyphicon-plus"></span> New Employee
+                            </a>
+                        </li>
+                    </ul> -->
+                    
+                    <!-- <app-filter-textbox class="navbar-right"
+                     (changed)="filterChanged($event)"></app-filter-textbox> -->
+                    
+                </div>
+            </div>
+        </div>
+    
+        <app-admin-employee-grid 
+          [employees]="employees"></app-admin-employee-grid>          
+    </div>
+</div>

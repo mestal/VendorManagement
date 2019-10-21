@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row grid-container">
+        <div class="col-md-10">
+            <div class="table">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of employees">
+                            <td>{{ employee.id }}</td>
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.status }}</td>
+                            <td><a [hidden]="!(employee.status == 1)" (click)="changeEmployeeStatus2(employee, 2)">
+                                Approve
+                            </a>
+                            <a [hidden]="!(employee.status == 1)" (click)="changeEmployeeStatus2(employee, 3)">
+                                    Reject
+                                </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

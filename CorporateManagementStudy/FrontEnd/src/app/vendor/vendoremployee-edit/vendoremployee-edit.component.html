@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">Corporate Management Study</a>
+  </nav>
+  <div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <form class="form-horizontal vendoremployee-edit-form" [formGroup]="vendorEmployeeForm"
+                    (ngSubmit)="saveVendorEmployee(vendorEmployeeForm.value)" novalidate>
+                    <div class="card-header">
+                        <button type="button" class="btn btn-sm mr-1 btn-success" data-toggle="modal"
+                            (click)="saveVendorEmployee(vendorEmployeeForm.value)">New Employee</button>
+                        <!-- <button type="button" class="btn btn-sm mr-1 btn-secondary" data-toggle="modal"
+                            (click)="close()">Close</button> -->
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Employee Info</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="af-name">Employee Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="name" name="name" class="form-control"
+                                                    formControlName="name" placeholder="" >
+                                                <!-- <ar-validation-message [control]="vendorForm.controls.name">
+                                                </ar-validation-message> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

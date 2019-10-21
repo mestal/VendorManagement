@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">Corporate Management Study</a>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </nav>
+  <div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <form class="form-horizontal vendor-edit-form" [formGroup]="vendorForm"
+                    (ngSubmit)="saveVendor(vendorForm.value)" novalidate>
+                    <div class="card-header">
+                        <button type="button" class="btn btn-sm mr-1 btn-success" data-toggle="modal"
+                            (click)="saveVendor(vendorForm.value)">New Vendor</button>
+                        <!-- <button type="button" class="btn btn-sm mr-1 btn-secondary" data-toggle="modal"
+                            (click)="close()">Close</button> -->
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Vendor Info</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="af-name">Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="af-name" name="af-name" class="form-control"
+                                                    formControlName="name" placeholder="" autocomplete="name">
+                                                <!-- <ar-validation-message [control]="vendorForm.controls.name">
+                                                </ar-validation-message> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">Corporate Management Study</a>
+  </nav>
+  <div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <form class="form-horizontal vendoruser-edit-form" [formGroup]="vendorUserForm"
+                    (ngSubmit)="saveVendorUser(vendorUserForm.value)" novalidate>
+                    <div class="card-header">
+                        <button type="button" class="btn btn-sm mr-1 btn-success" data-toggle="modal"
+                            (click)="saveVendorUser(vendorUserForm.value)">New Vendor User</button>
+                        <!-- <button type="button" class="btn btn-sm mr-1 btn-secondary" data-toggle="modal"
+                            (click)="close()">Close</button> -->
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Vendor User Info</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="af-name">Vendor Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="vendorname" name="vendorname" class="form-control"
+                                                    formControlName="vendorname" placeholder="" >
+                                                <!-- <ar-validation-message [control]="vendorForm.controls.name">
+                                                </ar-validation-message> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="af-name">User Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="username" name="username" class="form-control"
+                                                    formControlName="username" placeholder="" >
+                                                <!-- <ar-validation-message [control]="vendorForm.controls.name">
+                                                </ar-validation-message> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="af-name">Password</label>
+                                            <div class="col-md-9">
+                                                <input type="password" id="password" name="password" class="form-control"
+                                                    formControlName="password" placeholder="" >
+                                                <!-- <ar-validation-message [control]="vendorForm.controls.name">
+                                                </ar-validation-message> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
