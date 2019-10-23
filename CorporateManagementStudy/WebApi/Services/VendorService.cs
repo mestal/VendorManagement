@@ -41,7 +41,7 @@ namespace WebApi.Services
             try
             {
                 var employee = await _vendorRepository.FindEmployeeByIdAsync(employeeId);
-                
+
                 return new EmployeeResponse(employee);
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace WebApi.Services
         public async Task<VendorUserResponse> CreateVendorUserAsync(string vendorName, VendorUser user, string password)
         {
             var vendor = await FindByNameAsync(vendorName);
-            if(vendor == null)
+            if (vendor == null)
             {
                 return new VendorUserResponse($"Vendor not found.");
             }
@@ -72,8 +72,10 @@ namespace WebApi.Services
         {
             try
             {
-                var vendor = await _vendorRepository.FindByIdAsync(vendorUserId);
+                var vendorUser = await _vendorRepository.GetVendorUserAsync(vendorUserId);
+                var vendor = await _vendorRepository.FindByIdAsync(vendorUser.Vendor.Id);
                 employee.Vendor = vendor;
+
                 await _vendorRepository.AddEmployeeAsync(employee);
                 await _unitOfWork.CompleteAsync();
 
@@ -92,9 +94,11 @@ namespace WebApi.Services
 
         public async Task<List<Employee>> GetVendorEmployeesAsync(VendorEmployeesQuery vendorQuery)
         {
+            var vendorUser = await _vendorRepository.GetVendorUserAsync(vendorQuery.VendorUserId); ;
+
             var query = new EmployeesQuery
             {
-                VendorId = vendorQuery.VendorId
+                VendorId = vendorUser.Vendor.Id
             };
             return await _vendorRepository.GetEmployeesAsync(query);
         }

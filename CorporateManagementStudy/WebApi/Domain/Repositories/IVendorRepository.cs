@@ -25,5 +25,7 @@ namespace WebApi.Domain.Repositories
         void UpdateEmployee(Employee employee);
 
         Task<List<VendorUser>> GetVendorUsersAsync(VendorUsersQuery query);
+
+        Task<VendorUser> GetVendorUserAsync(int userId);
     }
 }

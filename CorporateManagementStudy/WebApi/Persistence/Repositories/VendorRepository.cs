@@ -97,5 +97,18 @@ namespace WebApi.Persistence.Repositories
 
             return vendorUsers;
         }
+
+        public async Task<VendorUser> GetVendorUserAsync(int userId)
+        {
+            IQueryable<VendorUser> queryable = _context.VendorUsers
+                                                    .Include(p => p.Vendor)
+                                                    .AsNoTracking();
+
+            queryable = queryable.Where(p => p.Id == userId);
+
+            VendorUser vendorUser = await queryable.FirstAsync();
+
+            return vendorUser;
+        }
     }
 }

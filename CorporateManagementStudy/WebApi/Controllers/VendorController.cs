@@ -98,6 +98,8 @@ namespace WebApi.Controllers
         [Authorize(Roles = "VendorAdmin")]
         public async Task<ActionResult> GetVendorEmployees(VendorEmployeesQuery query)
         {
+            query.VendorUserId = int.Parse(User.Claims.First(a => a.Type == "UserID").Value);
+
             var result = await _vendorService.GetVendorEmployeesAsync(query);
 
             return Ok(result);

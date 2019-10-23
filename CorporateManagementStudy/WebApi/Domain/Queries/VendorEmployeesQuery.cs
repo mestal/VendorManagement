@@ -9,5 +9,8 @@ namespace WebApi.Domain.Queries
     public class VendorEmployeesQuery
     {
         public int VendorId { get; set; }
+
+        public int VendorUserId { get; set; }
+
     }
 }
